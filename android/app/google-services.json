@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "494489567794",
+    "project_id": "ibrahim-b18aa",
+    "storage_bucket": "ibrahim-b18aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:494489567794:android:b48200a1956f321e2a322b",
+        "android_client_info": {
+          "package_name": "com.example.ibrahim_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCka2D9zoijNSpNVrdu1rZrhvcmJ84E6sk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
