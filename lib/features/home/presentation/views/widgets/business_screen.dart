@@ -6,6 +6,9 @@ class BusinessScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ListViewItem();
+    return ListView.builder(
+      itemBuilder: (context, index) => const ListViewItem(),
+      itemCount: 10,
+    );
   }
 }
