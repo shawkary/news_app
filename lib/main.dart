@@ -9,7 +9,11 @@ void main() {
   Bloc.observer = MyBlocObserver();
   runApp(MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => NewsCubit()..getBusiness(),)
+        BlocProvider(create: (context) => NewsCubit()
+          ..getBusiness()
+          ..getScience()
+          ..getSports(),
+        )
       ],
       child: const MyApp()));
 }
