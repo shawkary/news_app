@@ -4,17 +4,17 @@ class DioHelper
 {
   static Dio dio = Dio();
 
-  static init(){
-    dio = Dio(BaseOptions(
-      baseUrl: 'https://newsapi.org/',
-      receiveDataWhenStatusError: true,
-    ));
-  }
+  // static init(){
+  //   dio = Dio(BaseOptions(
+  //     baseUrl: 'https://newsapi.org/v2/top-headlines?',
+  //     receiveDataWhenStatusError: true,
+  //   ));
+  // }
 
-  static Future<void> get({
+  static Future<Response> get({
     required String url,
     Map<String, dynamic>? query,
   })async{
-    await dio.get(url, queryParameters: query);
+    return await dio.get(url, queryParameters: query);
   }
 }
