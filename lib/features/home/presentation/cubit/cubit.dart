@@ -29,9 +29,13 @@ class NewsCubit extends Cubit<NewsStates> {
         'category': 'business',
         'apiKey': '730514dfbb1f47bbb7b1ddf2b09244f2',
       },
-    ).then((value){
+    ).then((value) {
       newsModel1 = NewsModel.fromJson(value.data);
-      list1 = newsModel1!.articles!;
+      for(int i = 0; i <= newsModel1!.articles!.length; i++){
+        if(newsModel1!.articles![i].urlToImage != null){
+          list1.add(newsModel1!.articles![i]);
+        }
+    }
       emit(SuccessGetBusinessState());
     }).catchError((error){
       emit(ErrorGetBusinessState());
@@ -51,7 +55,11 @@ class NewsCubit extends Cubit<NewsStates> {
       },
     ).then((value){
       newsModel2 = NewsModel.fromJson(value.data);
-      list2 = newsModel2!.articles!;
+      for(int i = 0; i <= newsModel2!.articles!.length; i++){
+        if(newsModel2!.articles![i].urlToImage != null){
+          list2.add(newsModel2!.articles![i]);
+        }
+      }
       emit(SuccessGetScienceState());
     }).catchError((error){
       emit(ErrorGetScienceState());
@@ -72,7 +80,11 @@ class NewsCubit extends Cubit<NewsStates> {
       },
     ).then((value){
       newsModel3 = NewsModel.fromJson(value.data);
-      list3 = newsModel3!.articles!;
+      for(int i = 0; i <= newsModel3!.articles!.length; i++){
+        if(newsModel3!.articles![i].urlToImage != null){
+          list3.add(newsModel3!.articles![i]);
+        }
+      }
       emit(SuccessGetSportsState());
     }).catchError((error){
       emit(ErrorGetSportsState());

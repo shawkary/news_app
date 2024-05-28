@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:ibrahim_project/features/home/data/news_model/Articles.dart';
 import '../../../../../core/utilies/styles.dart';
@@ -14,16 +15,14 @@ class ListViewItem extends StatelessWidget {
         height: 120,
         child: Row(
           children: [
-            Container(
-              width: 120,
-              height: 120,
-              decoration: BoxDecoration(
-                color: Colors.lightBlue,
-                borderRadius: BorderRadius.circular(10),
-                image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: NetworkImage('${article.urlToImage}')
-                )
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: CachedNetworkImage(
+                  imageUrl: '${article.urlToImage}',
+                fit: BoxFit.fill,
+                height: 120,
+                width: 120,
+                placeholder: (context, url) => const Center(child: CircularProgressIndicator(),),
               ),
             ),
             const SizedBox(width: 10),
