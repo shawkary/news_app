@@ -17,9 +17,9 @@ class HomeView extends StatelessWidget {
       builder: (BuildContext context, state) {
         NewsCubit cubit = NewsCubit.get(context);
         List<Widget> screens = [
-          const BusinessScreen(),
-          const ScienceScreen(),
-          const SportsScreen(),
+           BusinessScreen(cubit),
+           ScienceScreen(cubit),
+           SportsScreen(cubit),
         ];
         return Scaffold(
           appBar: customAppBar(),

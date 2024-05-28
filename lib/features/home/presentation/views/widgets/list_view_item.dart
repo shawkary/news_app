@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/utilies/styles.dart';
+import '../../cubit/cubit.dart';
 
 class ListViewItem extends StatelessWidget {
-  const ListViewItem({super.key});
+  const ListViewItem(this.cubit, {super.key});
+  final NewsCubit cubit;
 
   @override
   Widget build(BuildContext context) {
