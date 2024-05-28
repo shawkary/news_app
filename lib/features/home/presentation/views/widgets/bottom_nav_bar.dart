@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:ibrahim_project/features/home/presentation/cubit/cubit.dart';
 
 class BottomNavBar extends StatelessWidget {
-  const BottomNavBar({super.key});
+  const BottomNavBar(this.cubit, {super.key});
+  final NewsCubit cubit;
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      onTap: (index) {},
-      currentIndex: 0,
+      onTap: (index)
+      {
+        cubit.changeBottomNavBarIndex(index);
+      },
+      currentIndex: cubit.currentIndex,
       backgroundColor: Colors.grey.shade100,
       selectedItemColor: Colors.lightBlue,
       items: const [

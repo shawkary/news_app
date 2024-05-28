@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ibrahim_project/features/home/presentation/cubit/cubit.dart';
 import 'package:ibrahim_project/features/splash/presentation/views/splash_view.dart';
 
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => NewsCubit(),)
+      ],
+      child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
