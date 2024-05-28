@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ibrahim_project/features/home/data/news_model/Articles.dart';
 import '../../../../../core/utilies/styles.dart';
-import '../../cubit/cubit.dart';
 
 class ListViewItem extends StatelessWidget {
-  const ListViewItem(this.cubit, {super.key});
-  final NewsCubit cubit;
+  const ListViewItem(this.article, {super.key});
+  final Articles article;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +20,10 @@ class ListViewItem extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.lightBlue,
                 borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: NetworkImage('${article.urlToImage}')
+                )
               ),
             ),
             const SizedBox(width: 10),
@@ -28,22 +32,22 @@ class ListViewItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'title',
+                    '${article.title}',
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
-                    style: Styles.textStyle20.copyWith(fontWeight: FontWeight.w600),
+                    style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold),
                   ),
-                  const Text(
-                    'description',
+                  Text(
+                    '${article.description}',
                     overflow: TextOverflow.ellipsis,
-                    maxLines: 2,
-                    style: Styles.textStyle16,
+                    maxLines: 3,
+                    style: Styles.textStyle14,
                   ),
                   const Spacer(),
                   Text(
-                    'date', style: Styles.textStyle18.copyWith(color: Colors.grey),
+                    '${article.publishedAt}',
+                    style: Styles.textStyle14.copyWith(color: Colors.grey),
                   ),
-
                 ],
               ),
             )

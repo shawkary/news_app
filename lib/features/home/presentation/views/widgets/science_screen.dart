@@ -9,8 +9,8 @@ class ScienceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemBuilder: (context, index) => const ListViewItem(),
-      itemCount: 10,
+      itemBuilder: (context, index) => ListViewItem(cubit.newsModel2!.articles![index]),
+      itemCount: cubit.list2.length,
     );
   }
 }

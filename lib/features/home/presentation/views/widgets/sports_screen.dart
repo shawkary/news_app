@@ -9,8 +9,8 @@ class SportsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemBuilder: (context, index) => const ListViewItem(),
-      itemCount: 10,
+      itemBuilder: (context, index) => ListViewItem(cubit.newsModel3!.articles![index]),
+      itemCount: cubit.list3.length,
     );
   }
 }

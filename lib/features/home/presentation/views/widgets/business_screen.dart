@@ -9,8 +9,8 @@ class BusinessScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemBuilder: (context, index) => ListViewItem(cubit),
-      itemCount: cubit.newsModel!.articles!.length,
+      itemBuilder: (context, index) => ListViewItem(cubit.newsModel1!.articles![index]),
+      itemCount: cubit.list1.length,
     );
   }
 }
