@@ -22,7 +22,7 @@ class HomeView extends StatelessWidget {
            SportsScreen(cubit),
         ];
         return Scaffold(
-          appBar: customAppBar(),
+          appBar: customAppBar(context),
           body: screens[cubit.currentIndex],
           bottomNavigationBar: BottomNavBar(cubit),
         );

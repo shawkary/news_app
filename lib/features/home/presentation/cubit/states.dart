@@ -16,4 +16,8 @@ class LoadingGetSportsState extends NewsStates {}
 class SuccessGetSportsState extends NewsStates {}
 class ErrorGetSportsState extends NewsStates {}
 
+class LoadingGetSearchState extends NewsStates {}
+class SuccessGetSearchState extends NewsStates {}
+class ErrorGetSearchState extends NewsStates {}
+
 class SuccessFillListsOfArticlesState extends NewsStates {}
