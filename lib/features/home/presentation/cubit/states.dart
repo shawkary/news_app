@@ -15,3 +15,5 @@ class ErrorGetScienceState extends NewsStates {}
 class LoadingGetSportsState extends NewsStates {}
 class SuccessGetSportsState extends NewsStates {}
 class ErrorGetSportsState extends NewsStates {}
+
+class SuccessFillListsOfArticlesState extends NewsStates {}
