@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ibrahim_project/features/home/presentation/cubit/cubit.dart';
-import 'package:ibrahim_project/features/home/presentation/cubit/states.dart';
 import '../../../../home/presentation/views/widgets/list_view_item.dart';
 
 class SearchViewBody extends StatelessWidget {
-  const SearchViewBody({super.key});
+  const SearchViewBody(this.cubit, {super.key});
+  final NewsCubit cubit;
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<NewsCubit, NewsStates>(
-      builder: (BuildContext context, state) {
-        NewsCubit cubit = NewsCubit.get(context);
-        return Column(
+    return Column(
           children: [
             Padding(
               padding: const EdgeInsets.all(10.0),
@@ -39,7 +35,5 @@ class SearchViewBody extends StatelessWidget {
             ),
           ],
         );
-      },
-    );
   }
 }

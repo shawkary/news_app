@@ -14,7 +14,6 @@ class NewsCubit extends Cubit<NewsStates> {
     emit(ChangeBottomNavBarIndex());
   }
 
-
   List list1 = [];
   void getBusiness()async {
     emit(LoadingGetBusinessState());
@@ -57,7 +56,7 @@ class NewsCubit extends Cubit<NewsStates> {
     emit(LoadingGetSearchState());
     await DioHelper.get(
       url: 'https://newsapi.org/v2/everything?q=$value&apiKey=730514dfbb1f47bbb7b1ddf2b09244f2',
-    ).then((value){
+    ).then((value)async{
       fillLists(lst: value.data['articles'], list: searchList);
     }).catchError((error){
       emit(ErrorGetSearchState());
